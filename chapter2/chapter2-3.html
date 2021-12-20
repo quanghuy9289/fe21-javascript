@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var length = prompt("Enter length");
+        length = parseFloat(length);
+
+        var width = prompt("Enter width");
+        width = parseFloat(width);
+        
+        var area = length*width;
+        area = parseFloat(area);
+        alert("Area = " + area);
+        
+        var perimeter = (length+width)*2;
+        perimeter = parseFloat(perimeter);
+        alert("Perimeter = " + perimeter);
+    </script>
+</head>
+<body>
+    <h1>The Area and Perimeter App</h1>
+    <script>
+        document.write("Length = " + length + "<br>" +
+                        "Width = " + width + "<br>" + "<br>" +
+                        "Area = " + area + "<br>" +
+                        "Perimeter = " + perimeter + "<br>"
+
+        );
+
+    </script>
+    <h1>Thanks for using the Miles Per Gallon application</h1>
+</body>
+</html>
