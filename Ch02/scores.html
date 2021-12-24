@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Average Test Scores</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <script>
+            var entry , average, total = 0;
+            entry = prompt("Enter test score 1");
+            var score1 = parseInt(entry);
+            total += score1;
+            entry = prompt("Enter test score 2");
+            var score2 = parseInt(entry);
+            total += score2;
+            entry = prompt("Enter test score 3");
+            var score3 = parseInt(entry);
+            total += score3;
+            average = parseInt(total / 3);
+            document.write("<h1>The Test Score App</h1>");
+            document.write("Score 1 = ", score1, "<br>", "Score 2 = ", score2, "<br>", "Score 3 = ", score3, "<br><br>");
+            document.write("Average Test Score = ", average, "<br><br>");
+            document.write("Thanks for using the Test Scores Application.");
+        </script>
+    </body>
+</html>
