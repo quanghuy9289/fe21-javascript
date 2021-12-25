@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+    <meta charset="UTF-8">	
     <title>Average Test Scores</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
     <script>
-      var entry;
-      var average;
-      var scores = [];
-      var total = 0;
-      var show = "The test score:\n";
-      do {
-        entry = prompt(
-          "Enter the test score\n" + "Or enter 999 to end entries",
-          999
-        );
-        entry = parseInt(entry);
-        if (entry >= 0 && entry <= 100) {
-          scores[scores.length] = entry;
-        } else if (entry != 999) {
-          alert(
-            "Entry must by a valid number from 0 through 100\n" +
-              "Or enter 999 to end entries"
-          );
+        var entry;
+        var average;
+        var scores = [];
+        var total = 0;
+        var show = "The test scores:\n";
+        var highScore = 0;
+
+        //first use a do-while loop to get scores from user
+        do {
+            entry = prompt("Enter test score\n" +
+                           "Or enter 999 to end entries", 999);
+            entry = parseInt(entry);
+            if (entry >= 0 && entry <= 100) {
+                scores[scores.length] = entry;
+            } else if (entry != 999){
+                alert("Entry must by a valid number from 0 through 100\n" +
+                      "Or enter 999 to end entries");
+            }
         }
-      } while (entry != 999);
-      var highestScore = 0;
-      for (i = 0; i < scores.length; i++) {
-        total += scores[i];
-        if (scores[i] > highestScore) {
-          highestScore = scores[i];
+        while (entry != 999); 
+
+        //next use a for loop to process the scores
+        for (var i = 0; i < scores.length; i++) {
+            total = total + scores[i];       //both are numbers so adds
+            show = show + scores[i] + "\n";  //strings & numbers so concatenates
+            if(scores[i] < scores[i-1]){
+               highScore = scores[i-1];
+           }
         }
-        show = show + scores[i] + "\n";
-      }
-      average = parseInt(total / scores.length);
-      alert(
-        show +
-          "\nAverage score is " +
-          average +
-          "\nHighest Score is " +
-          highestScore
-      );
+
+        // for (var i = 0; i < scores.length; i++) {
+        //    if(scores[i] < scores[i-1]){
+        //        highScore = scores[i-1];
+        //    }
+        // }
+
+        //then calculate the average and display
+        average = parseInt(total/scores.length);
+        alert(show + "\nAverage score is " + average  + "\nHigh score is " + highScore);
     </script>
-  </head>
-  <body>
-    <h1>Thanks for using the Test Scores application.</h1>
-  </body>
+</head>
+<body>
+    <main>
+        <!-- Will show after JavaScript has run -->
+        <h1>Thanks for using the Test Scores application!</h1>
+    </main>
+</body>
 </html>

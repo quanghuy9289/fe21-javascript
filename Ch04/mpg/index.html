@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">	
+    <title>Calculate MPG</title>
+    <link rel="stylesheet" href="mpg.css">
+    <script>
+        "use strict";
+        var $ = function(id) {// this method use  to get id in case you wana call like this $("id")
+            return document.getElementById(id);
+        };
+        // var calculateMpg = function(miles, gallons) {
+        function calculateMpg(miles, gallons) {
+			var mpg = (miles / gallons);
+			mpg = mpg.toFixed(1);
+			return mpg;
+		};
+		var processEntries = function() {
+            var miles = parseFloat($("miles").value);
+            var gallons = parseFloat($("gallons").value);
+            //valid miles
+            if(isNaN(miles)){
+                $("milesError").firstChild.nodeValue = "Miles must be numberic"
+            }else if(miles <= 0){
+                $("milesError").firstChild.nodeValue = "Miles must be greater than zero"
+            }
+            //valid galons
+            if(isNaN(miles)){
+                $("galonsError").firstChild.nodeValue = "Galons must be numberic"
+            }else if(miles <= 0){
+                $("galonsError").firstChild.nodeValue = "Galons must be greater than zero"
+            }
+            if (isNaN(miles) || isNaN(gallons)) {
+                alert("Both entries must be numeric");
+            } else {
+                $("mpg").value = calculateMpg(miles, gallons);
+            }
+        };
+		window.onload = function() {
+            $("calculate").onclick = processEntries;
+            $("miles").focus();
+            $("clearEntries").onclick = clearEntries;
+            $("miles").ondblclick = clearEntries;
+            
+        };
+        //Clear entries function
+        var clearEntries = function(){
+            $("miles").value = "";
+            $("gallons").value = "";
+            $("mpg").value = "";
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Calculate Miles Per Gallon</h1>
+        <label for="miles">Miles Driven:</label>
+		<input type="text" ondblclick="dbClick()" id="miles">
+        <span id="milesError">*</span><br>
+        <label for="gallons">Gallons of Gas Used:</label>
+        <input type="text" id="gallons">
+        <span id="galonsError">*</span><br>
+        <label for="mpgx">Miles Per Gallon</label>
+        <input type="text" id="mpg" disabled><br>
+        <label>&nbsp;</label>
+        <input type="button" id="calculate" value="Calculate MPG"><br>
+        <input style="margin-left: 190px;" type="button" id="clearEntries" value="Clear Entries"><br>
+    </main>
+</body>
+</html>

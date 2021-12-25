@@ -1,62 +1,47 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
     <title>Future Value Application</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
     <script>
-      var futureValue;
-      do {
-        var investment = prompt("Enter investment amount");
-        investment = parseFloat(investment);
-        if (isNaN(investment) || investment <= 0) {
-          alert("Investment must be a number and greater than 0");
-        }
-      } while (isNaN(investment) || investment <= 0);
-      do {
-        var rate = prompt("Enter interest rate");
-        rate = parseFloat(rate);
-        if (isNaN(rate) || rate <= 0 || rate > 15) {
-          alert(
-            "Interest rate must be a number, greater than 0 and less than 15"
-          );
-        }
-      } while (isNaN(rate) || rate <= 0 || rate > 15);
-      do {
-        var years = prompt("Enter number of years");
-        years = parseFloat(years);
-        if (isNaN(years) || years <= 0) {
-          alert("Must be a number and greater than 0");
-        }
-      } while (isNaN(years) || years <= 0);
-      document.write(
-        "Investment amount = " +
-          investment +
-          " Rate = " +
-          rate +
-          " Years = " +
-          years +
-          "<br>"
-      );
-      futureValue = investment;
-      for (i = 1; i <= years; i++) {
-        var interest = futureValue * (rate / 100);
-        investment += interest;
-        futureValue = investment;
-        document.write(
-          "Year=" +
-            i +
-            "  Interest=" +
-            interest +
-            "  Value=" +
-            parseInt(futureValue) +
-            "<br>"
-        );
-      }
-      document.write("<br>Thanks for using the Future Value application.");
+		var futureValue;
+		
+		// get user entries
+		do{
+			var investment = prompt("Enter investment amount as xxxxx.xx", 10000);
+			investment = parseFloat(investment);
+		}while(investment < 0)
+		
+		do{
+			var rate = prompt("Enter interest rate as xx.x", 7.5);
+			rate = parseFloat(rate);
+		}while(rate < 0)
+	
+		do{
+			var years = prompt("Enter number of years", 10);
+			years = parseInt(years);
+		}while(years <= 0 && years > 15)
+		
+		// calulate future value
+		futureValue = investment;
+		for (var i = 1; i <= years; i++ ) {
+			futureValue = futureValue + (futureValue * rate / 100);
+			document.write(" year = "+i);
+			document.write(" Interest rate = " + rate);
+			document.write(" Future Value of year " + i + " is: " + futureValue.toFixed(3) + "<br><br>");
+		}
+		futureValue = parseInt(futureValue);	
     </script>
-  </body>
+</head>
+<body>
+    <main>
+    	<script>
+			document.write("Investment amount = " + investment);
+			document.write(" Interest rate = " + rate);
+			document.write(" Years = " + years);
+			document.write(" Future Value is " + futureValue + "<br><br>");
+        </script>
+        Thanks for using the Future Value application.
+    </main>
+</body>
 </html>
