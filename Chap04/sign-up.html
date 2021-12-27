@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>f------k</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/sign-up.css">
+    <script>
+        "use strict";
+        var $ = function(id) {
+            return document.getElementById(id);
+        }
+
+        function signUpHandler() {
+            var firstname = $("firstname").value;
+            var lastname = $("lastname").value;
+            var email1 = $("email1").value;
+            var email2 = $("email2").value;
+            var password = $("password").value;
+            if (firstname == "") {
+                $("name-error").firstChild.nodeValue = "First Name is required"
+            } else if (lastname == "") {
+                $("name-error").firstChild.nodeValue = "Last Name is required"
+            } else {
+                $("name-error").firstChild.nodeValue = ""
+            }
+            if (email1 == "") {
+                $("email1-error").firstChild.nodeValue = "This field is required"
+            } else {
+                $("email1-error").firstChild.nodeValue = ""
+            }
+            if (email2 == "") {
+                $("email2-error").firstChild.nodeValue = "This field is required"
+            } else if (email2 != email1) {
+                $("email2-error").firstChild.nodeValue = "Email does not match"
+            } else {
+                $("email2-error").firstChild.nodeValue = ""
+            }
+            if (password == "") {
+                $("pw-error").firstChild.nodeValue = "This field is required"
+            } else {
+                $("pw-error").firstChild.nodeValue = ""
+            }
+        }
+        window.onload = function() {
+            $("sign-up").onclick = signUpHandler;
+            $("firstname").focus();
+        }
+    </script>
+</head>
+
+<body>
+    <header class="bg-primary py-3">
+        <h1 class="text-light ml-5">f------k</h1>
+    </header>
+    <main>
+        <h1>Sign Up</h1>
+        <h4>It's free and always will be.</h4>
+        <form>
+            <div class="form-group form-inline">
+                <input type="text" class="form-control col-sm-4" id="firstname" placeholder="First Name">
+                <input type="text" class="form-control col-sm-4" id="lastname" placeholder="Last Name">
+                <span class="text-danger col-sm-4" id="name-error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <input type="text" class="form-control col-sm-8" id="email1" placeholder="Your email address">
+                <span class="text-danger col-sm-4" id="email1-error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <input type="text" class="form-control col-sm-8" id="email2" placeholder="Re-enter email Address">
+                <span class="text-danger col-sm-4" id="email2-error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <input type="password" class="form-control col-sm-8" id="password" placeholder="New Password">
+                <span class="text-danger col-sm-4" id="pw-error">&nbsp;</span>
+            </div>
+            <label class="h6" for="birthday">Birthday</label>
+            <div class="form-group form-inline">
+                <input type="date" class="form-control col-sm-4" id="birthday">
+                <div class="col-sm-4 text-primary">Why do I need to provide my date of birth</div>
+            </div>
+            <div class="form-group form-inline">
+                <input type="radio" id="male" name="gender" class="col-sm-1" value="male">
+                <label class="h6 col-sm-1" for="male">Male</label>
+                <input type="radio" id="female" name="gender" class="col-sm-1" value="female">
+                <label class="h6 col-sm-1" for="female">Female</label>
+                <span class="col-sm-4"></span>
+                <span class="text-danger col-sm-4" id="">*</span>
+            </div>
+            <div class="col-sm-8 mb-3">
+                <small class="text-muted">
+                    By clicking Sign Up, you agree to our
+                    <span class="text-primary">Term</span> and that you have read our
+                    <span class="text-primary">Data Use Policy,</span> including our
+                    <span class="text-primary">Cookie Use.</span>
+                </small>
+            </div>
+            <div class="form-group">
+                <input type="button" class="col-sm-4 btn btn-success text-light" id="sign-up" value="Sign Up">
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

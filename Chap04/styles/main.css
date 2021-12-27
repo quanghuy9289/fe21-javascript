@@ -1,0 +1,20 @@
+body {
+    display: grid;
+    grid-template: 100px 1fr 1fr 1fr / repeat(6, 1fr);
+}
+
+main {
+    grid-row: 2 / 4;
+    grid-column: 2 / 6;
+}
+
+label {
+    display: inline-block !important;
+    width: 200px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+#calculate {
+    margin-left: 210px;
+}

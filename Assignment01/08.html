@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Exercise 08</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      do {
+        var month = prompt("Enter the month(from 1 to 12): ");
+        month = parseInt(month);
+      } while (month < 1 || month > 12);
+      var today = new Date();
+      var years = today.getFullYear();
+      var days;
+      if (years % 4 === 0) {
+        switch (month) {
+          case 1: {
+            days = 31;
+            break;
+          }
+          case 2: {
+            days = 28;
+            break;
+          }
+          case 3: {
+            days = 31;
+            break;
+          }
+          case 4: {
+            days = 30;
+            break;
+          }
+          case 5: {
+            days = 31;
+            break;
+          }
+          case 6: {
+            days = 30;
+            break;
+          }
+          case 7: {
+            days = 31;
+            break;
+          }
+          case 8: {
+            days = 31;
+            break;
+          }
+          case 9: {
+            days = 30;
+            break;
+          }
+          case 10: {
+            days = 31;
+            break;
+          }
+          case 11: {
+            days = 30;
+            break;
+          }
+          case 12: {
+            days = 31;
+            break;
+          }
+        }
+      } else {
+        switch (month) {
+          case 1: {
+            days = 31;
+            break;
+          }
+          case 2: {
+            days = 29;
+            break;
+          }
+          case 3: {
+            days = 31;
+            break;
+          }
+          case 4: {
+            days = 30;
+            break;
+          }
+          case 5: {
+            days = 31;
+            break;
+          }
+          case 6: {
+            days = 30;
+            break;
+          }
+          case 7: {
+            days = 31;
+            break;
+          }
+          case 8: {
+            days = 31;
+            break;
+          }
+          case 9: {
+            days = 30;
+            break;
+          }
+          case 10: {
+            days = 31;
+            break;
+          }
+          case 11: {
+            days = 30;
+            break;
+          }
+          case 12: {
+            days = 31;
+            break;
+          }
+        }
+      }
+      alert("The month " + month + " have " + days + " days");
+    </script>
+  </head>
+  <body></body>
+</html>
