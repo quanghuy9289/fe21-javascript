@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exercise 02</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            do {
+                var math = prompt("Math: ");
+                math = parseFloat(math);
+                var physics = prompt("Physics: ");
+                physics = parseFloat(physics);
+                var chemistry = prompt("Chemistry: ");
+                chemistry = parseFloat(chemistry);
+            } while (isNaN(math) || isNaN(physics) || isNaN(chemistry) || math < 0 || physics < 0 || chemistry < 0)
+            var average = 0;
+            average = (math + physics + chemistry) / 3;
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write("Average = " + average + "<br>");
+            if (average < 5) {
+                document.write("Rank = D");
+            } else if (average <= 6.5) {
+                document.write("Rank = C");
+            } else if (average <= 8) {
+                document.write("Rank = B");
+            } else {
+                document.write("Rank = A");
+            }
+        </script>
+    </body>
+</html>

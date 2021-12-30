@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 07</title>  
+    <style>
+        * {box-sizing: border-box;}
+        main {max-width: 1000px; margin:auto;;}
+        input[type=text] {width: 500px;  height: 40px; padding: 10px; margin-bottom:10px}
+        input[type=button] {width: 100px; height: 40px; padding: 10px; text-align:center; margin-top:10px}
+    </style>
+
+    <script>
+        var $ = function(id){
+            return document.getElementById(id);
+        }
+
+        var enter = function(){
+            var code = $("code").value;
+            var name = $("name").value;
+            var age = $("age").value;
+            var gender;
+            var isValid = true;
+
+            if(code ==""){
+                $("code_error").firstChild.nodeValue = "Vui lòng nhập mã";
+                isValid = false;
+            } else {
+                $("code_error").firstChild.nodeValue = "";
+            }
+
+            if(name ==""){
+                $("name_error").firstChild.nodeValue = "Vui lòng nhập tên";
+                isValid = false;
+            } else {
+                $("name_error").firstChild.nodeValue = "";
+            }
+
+            if(age ==""){
+                $("age_error").firstChild.nodeValue = "Vui lòng nhập tuổi";
+                isValid = false;
+            } else {
+                $("age_error").firstChild.nodeValue = "";
+            }
+
+            if($("male").checked){
+                gender = "Nam";
+            } else {
+                gender = "Nữ";
+            }
+
+            if(isValid){
+                var showInfo = "";
+                showInfo += "Mã: " + code;
+                showInfo += "<br>Tên: " + name;
+                showInfo += "<br>Tuổi: "+ age;
+                showInfo += "<br>Giới tính: "+gender;
+                $("list").innerHTML = showInfo;
+            }
+
+            
+        }
+        
+        var toggle = function() {
+            var h4 = this;
+            var div = h4.nextElementSibling;
+
+            if (div.style.display === "none") {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        };
+
+        window.onload = function() {
+            $("submit").onclick = enter;
+            var list = $("list");
+            var h4Element = list.getElementsByTagName("h4");
+
+            for (var i=0; i<h4Element.length; i++) {
+                h4Element[i].onclick = toggle;
+            }
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape") {
+                    var form = $("form")
+                    form.style.display = "none";
+                }
+            });
+        };
+
+
+
+
+    </script>
+  </head>
+  <body>
+    <main>
+      <body>
+        <h1><a href="#">Application to manage student information</a></h4>
+        <div id="form" >
+            <input type="text" id="code" name="code" placeholder="Nhâp mã học sinh">
+            <span id="code_error">*</span>
+            <br />
+            <input type="text" id="name" name="name" placeholder="Nhập tên học sinh">
+            <span id="name_error">*</span>
+            <br />
+            <input type="text" id="age" name="age" placeholder="Nhập tuổi học sinh">
+            <span id="age_error">*</span>
+            <br />
+            <input type="radio" id="male" name="gender" checked />Nam
+            <input type="radio" id="female" name="gender" />Nữ
+            <br />
+            <input type="button" id="submit" value="Xác nhận" />
+            <br />
+        </div>
+        <h4><a href="#">student information</a></h4>
+        <div id="list" ></div>
+      </body>
+    </main>
+  </body>
+</html>

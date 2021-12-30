@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exercise 09</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            var a, b, min, max;
+            do {
+                a = prompt("Enter number a: ");
+                a = parseInt(a);
+                b = prompt("Enter number b: ");
+                b = parseInt(b);
+            } while (isNaN(a) || isNaN(b) || a < 1 || b < 1)
+            min = (a < b) ? a : b;
+            for (var i = 1; i <= min; i++) {
+                if (a % i == 0 && b % i == 0) max = i;
+            }
+            alert("Greatest common divisor of " + a + " and " + b + " is: " + max);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

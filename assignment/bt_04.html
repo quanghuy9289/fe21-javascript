@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exercise 04</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            alert("a(x^2) + bx + c = 0");
+            var a = prompt("Enter value a: ");
+            a = parseFloat(a);
+            var b = prompt("Enter value b: ");
+            b = parseFloat(b);
+            var c = prompt("Enter value c: ");
+            c = parseFloat(c);
+            if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+                var delta = b*b - 4*a*c;
+                if (delta < 0) alert("The equation has no solution")
+                else if (delta === 0 && a !== 0) {
+                    var x = -b / (2*a);
+                    alert("The equation has 1 solution:\nx= " + x);
+                } else if (delta === 0 && a === 0) alert("This equation has no solution") 
+                else if (delta > 0) {
+                    var x1 = (-b + Math.pow(delta, 1/2)) / (2 * a);
+                    var x2 = (-b - Math.pow(delta, 1/2)) / (2 * a);
+                    alert("The equation has 2 solution:\nx1 = " + x1 + "\nx2 = " + x2);
+                }
+            } else alert ("Invalid value")
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

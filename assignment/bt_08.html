@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 08</title>  
+  </head>
+  <body>
+    <main>
+      <body>
+        <script>
+             
+            var n = parseFloat(prompt("Enter the number of months n:"));
+
+            var thisYear = new Date().getFullYear;
+
+            switch (true) {
+                case n === 1 ||
+                n === 3 ||
+                n === 5 ||
+                n === 7 ||
+                n === 8 ||
+                n === 10 ||
+                n === 12:
+                alert("Months have 31 days");
+                break;
+                case n === 4 || n === 6 || n === 9 || n === 11:
+                alert("Months have 30 days");
+                break;
+                case n === 2 && year % 4 === 0:
+                alert("Months have 29 days");
+
+                break;
+                case n === 2 && year % 4 !== 0:
+                alert("Months have 28 days");
+
+                break;
+                default:
+                alert("Please enter from 1 to 12");
+                break;
+            }
+          
+        </script>
+      </body>
+    </main>
+  </body>
+</html>
