@@ -1,0 +1,30 @@
+body{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    background-color: white;
+    width: 730px;
+    margin: 0 auto; /*center body*/
+    margin-top: 15px;
+    border: 3px solid black;
+    padding: 0 2rem 1rem;
+}
+h1{
+    font-size: 150%;
+    color: blueviolet;
+    margin-bottom: 1rem;
+}
+label{
+    float: left;
+    width: 14rem;
+    margin: 3px;
+}
+input{
+    width: 15rem;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    margin: 3px;
+}
+input[type="button"]{
+    margin-left: 15rem;
+    width: 150px;
+}
