@@ -18,6 +18,10 @@ var setStorage = function(key, arr) {
 
 var clearStorage = function(key) {
     localStorage.setItem(key, "");
+<<<<<<< HEAD
 };
 
 
+=======
+};
+>>>>>>> c8831bd87db7aade01697f77c1556c2269dc7578
