@@ -19,3 +19,5 @@ var setStorage = function(key, arr) {
 var clearStorage = function(key) {
     localStorage.setItem(key, "");
 };
+
+

@@ -25,11 +25,11 @@ var displaySortedTaskList = function(tasks, div, deleteHandler,editHandler) {
         // get links, loop and add onclick event handler
         var links = div.getElementsByTagName("a");
         for (var i = 0; i < links.length; i++) {
-            if(links[i].hasAttribute("id")) {
-                links[i].onclick = deleteHandler;
+            if(links[i].title!="") {
+                links[i].onclick = editHandler;
             }
-            else if(links[i].hasAttribute("title")){
-                links.onclick = editHandler;
+            else if(links[i].id!=""){
+                links[i].onclick = deleteHandler;
             }
         }
     } 
@@ -50,3 +50,8 @@ var capitalizeTask = function(task) {
     var first = task.substring(0,1);
     return first.toUpperCase() + task.substring(1);
 };
+
+
+
+
+
