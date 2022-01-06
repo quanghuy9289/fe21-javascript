@@ -25,21 +25,12 @@ var displaySortedTaskList = function(tasks, div, deleteHandler,editHandler) {
         // get links, loop and add onclick event handler
         var links = div.getElementsByTagName("a");
         for (var i = 0; i < links.length; i++) {
-<<<<<<< HEAD
             if(links[i].title!="") {
                 links[i].onclick = editHandler;
             }
             else if(links[i].id!=""){
                 links[i].onclick = deleteHandler;
             }
-=======
-            if(links[i].hasAttribute("id")) {
-                links[i].onclick = deleteHandler;
-            }
-            else if(links[i].hasAttribute("title")){
-                links.onclick = editHandler;
-            }
->>>>>>> c8831bd87db7aade01697f77c1556c2269dc7578
         }
     } 
 };
@@ -58,13 +49,9 @@ var editTask = function(tasks, i, newText) {
 var capitalizeTask = function(task) {
     var first = task.substring(0,1);
     return first.toUpperCase() + task.substring(1);
-<<<<<<< HEAD
 };
 
 
 
 
 
-=======
-};
->>>>>>> c8831bd87db7aade01697f77c1556c2269dc7578
