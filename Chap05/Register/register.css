@@ -1,0 +1,41 @@
+body {
+  display: grid;
+  grid-template: 50px 1fr / repeat(12, 1fr);
+}
+main {
+  grid-row: 2 / 3;
+  grid-column: 3 / span 8;
+}
+span {
+  color: #dc3545;
+}
+.setwidth {
+  display: inline-block !important;
+  width: 200px;
+  text-align: left;
+  color: #212529;
+  cursor: pointer;
+}
+label {
+  cursor: pointer;
+}
+#email,
+#phone,
+#country,
+#comment,
+#states {
+  width: 300px;
+}
+#register,
+#resetForm {
+  width: 138px;
+}
+textarea {
+  font-family: monospace;
+}
+div.close {
+  display: none;
+}
+div.open {
+  display: block;
+}

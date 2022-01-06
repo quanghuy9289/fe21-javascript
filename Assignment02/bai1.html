@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exercise 01</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            var arrayInt = [];
+            for (var i = 0; i < 10; i++) {
+                var x = prompt("Enter integer number at [" + i + "] in array");
+                if (!isNaN(x) && parseInt(x) % 1 === 0) {
+                    arrayInt[i] = parseInt(x);
+                } else {
+                    alert("Invalid number");
+                    i--;
+                }
+            }
+            var printAll = function() {
+                return arrayInt.join("&nbsp;&nbsp;");
+            }
+            var findEle = function() {
+                var findValue = prompt("Enter a value you want to search in array");
+                findValue = parseInt(findValue);
+                var findX = true;
+                for (var i = 0; i < arrayInt.length; i++) {
+                    if (arrayInt[i] === findValue) {
+                        findX = true;
+                        break;
+                    } else findX = false;
+                }
+                return (findX === true) ? "Value exists" : "Value not exists"
+            }
+            var findMax = function() {
+                var max = 0;
+                for (var i = 0; i < arrayInt.length; i++) {
+                    if (arrayInt[i] > max) max = arrayInt[i];
+                }
+                return "Maximum number is: " + max;
+            }
+            var calSum = function() {
+                var sum = 0;
+                for (var i = 0; i < arrayInt.length; i++) {
+                    sum += arrayInt[i];
+                }
+                return "Sum of array is: " + sum;
+            }
+            var sort = function() {
+                localStorage.setItem("array", arrayInt);
+                var sortArr = function(x, y) {
+                    return x - y;
+                }
+                var arrayIntSorted = localStorage.getItem("array").split(",").sort(sortArr);
+                return arrayIntSorted.join("&nbsp;&nbsp;");
+            }
+        </script>
+        <style>
+            body {
+                margin-left: 20px;
+            }
+            span {
+                margin-left: 100px;
+            }
+            select {
+                width: 50px;
+                margin-left: 40px;
+            }
+            input {
+                margin-left: 50px
+            }
+            textarea {
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bold;
+                margin-top: 30px;
+                width: 400px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h4>[1].Print Array</h4>
+        <h4>[2].Search A Number</h4>
+        <h4>[3].Find Maximum Number</h4>
+        <h4>[4].Calculate Sum Of Array</h4>
+        <h4>[5].Sort Array</h4>
+        <span>Your choice is: </span>
+        <select id="choice">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <input type="button" id="choose" value="Choose"><br>
+        <textarea id="display"></textarea>
+        <script>
+            var $ = function(id) {
+                return document.getElementById(id);
+            }
+            var choice = function() {
+                var choiceValue = $("choice").value;
+                switch (choiceValue) {
+                    case "1": {
+                        $("display").innerHTML = printAll(arrayInt);
+                        break;
+                    }
+                    case "2": {
+                        $("display").innerHTML = findEle(arrayInt);
+                        break;
+                    }
+                    case "3": {
+                        $("display").innerHTML = findMax(arrayInt);
+                        break;
+                    }
+                    case "4": {
+                        $("display").innerHTML = calSum(arrayInt);
+                        break;
+                    }
+                    case "5": {
+                        $("display").innerHTML = sort(arrayInt);
+                        break;
+                    }
+                }
+            }
+            window.onload = function() {
+                $("choose").onclick = choice;
+            }
+        </script>
+    </body>
+</html>

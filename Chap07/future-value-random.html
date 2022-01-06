@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Future Value Random</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <script src="future-value-random.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1 class="text-center text-dark mb-5">Future Value Calculator</h1>
+        <form>
+            <div class="form-group form-inline">
+                <label class="h6" for="investment">Total Investment:</label>
+                <input type="text" id="investment" class="form-control">
+            </div>
+            <div class="form-group form-inline">
+                <label class="h6" for="rate">Annual Interest Rate:</label>
+                <input type="text" id="rate" class="form-control">
+            </div>
+            <div class="form-group form-inline">
+                <label class="h6" for="years">Number of Years:</label>
+                <input type="text" id="years" class="form-control">
+            </div>
+            <div class="form-group form-inline">
+                <label class="h6" for="futureValue">Future Value:</label>
+                <input type="text" id="futureValue" class="form-control" disabled>
+            </div>
+            <input type="button" id="random" class="btn btn-primary" value="Random">
+            <p id="today" class="mt-4"></p>
+        </form>
+    </main>
+</body>
+
+</html>

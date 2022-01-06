@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="register.css">
+    <script src="register.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <main>
+        <h1 class="text-primary text-center mb-5">Register for an Account</h1>
+        <form action="register-account.html" method="POST" name="Register Account" id="registrationForm" class="mb-5">
+            <div class="form-group form-inline">
+                <label for="email" class="h6 setwidth">E-Mail:</label>
+                <input type="text" id="email" class="form-control" name="Email">
+            </div>
+            <div class="form-group form-inline">
+                <label for="phone" class="h6 setwidth">Mobile Phone:</label>
+                <input type="text" id="phone" class="form-control" name="Phone">
+            </div>
+            <div class="form-group form-inline">
+                <label for="country" class="h6 setwidth">Country:</label>
+                <select class="form-control" id="country" name="Country">
+                    <option hidden>Select an option</option>
+                    <option>Canada</option>
+                    <option>USA</option>
+                    <option>Mexico</option>
+                </select>
+            </div>
+            <div id="USA" class="form-group form-inline close">
+                <label for="states" class="h6 setwidth">States:</label>
+                <select class="form-control" id="states">
+                    <option>California</option>
+                    <option>New Mexico</option>
+                    <option>Florida</option>
+                    <option>Pennsylvania</option>
+                    <option>Texas</option>
+                    <option>Indiana</option>
+                </select>
+            </div>
+            <div class="form-check form-inline pl-0 mb-3">
+                <span class="h6 setwidth">Contact me by:</span>
+                <input class="form-check-input" id="cmbText" type="radio" name="Contact" value="Text" checked>
+                <label for="cmbText" class="mr-3">Text</label>
+                <input class="form-check-input" id="cmbEmail" type="radio" name="Contact" value="Email">
+                <label for="cmbEmail" class="mr-3">Email</label>
+                <input class="form-check-input" id="cmbPhone" type="radio" name="Contact" value="Phone">
+                <label for="cmbPhone" class="mr-3">Mobile phone</label>
+                <input class="form-check-input" id="dont" type="radio" name="Contact" value="Don't Contact Me">
+                <label for="dont" class="mr-3">Don't contact me</label>
+            </div>
+            <div class="form-check form-inline pl-0 mb-3">
+                <span class="h6 setwidth">Terms of Service:</span>
+                <input class="form-check-input" id="term" type="checkbox">
+                <label for="term">I accept</label>
+            </div>
+            <div class="form-group form-inline">
+                <label for="comment" class="h6 setwidth">Comments:</label>
+                <textarea class="form-control" id="comment" rows="4" name="Comments"
+                    placeholder="These are the times that try men's souls."></textarea>
+            </div>
+            <div class="form-group form-inline">
+                <span class="setwidth"></span>
+                <input type="button" class="btn btn-primary mr-4" id="register" value="Register">
+                <input type="button" class="btn btn-secondary" id="resetForm" value="Reset">
+            </div>
+        </form>
+        <h3 id="registrationHeader" class="thead text-danger text-center">&nbsp;</h3>
+        <table class="table table-hover text-dark h6" id="registrationInfo"></table>
+    </main>
+</body>
+
+</html>

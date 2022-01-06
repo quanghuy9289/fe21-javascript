@@ -1,0 +1,33 @@
+body {
+  display: grid;
+  grid-template: 90px 1fr / repeat(12, 1fr);
+}
+main {
+  grid-row: 2 / 3;
+  grid-column: 3 / span 8;
+  border: 3px solid #007bff;
+  border-radius: 20px;
+  padding: 20px 30px;
+}
+label {
+  display: inline-block !important;
+  width: 200px;
+  text-align: right;
+  padding-right: 10px;
+}
+select {
+  width: 200px !important;
+}
+#form-output {
+  border-top: 3px solid #007bff;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+#calculate {
+  margin-left: 200px;
+  width: 100px;
+}
+span {
+  position: relative;
+  right: 20px;
+}

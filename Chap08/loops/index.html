@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Find Prime Numbers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="loops.css">
+    <script src="loops.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1 class="text-primary text-center">Find Prime Numbers</h1>
+        <p clasa="text-dark">Enter any a number to find out how many prime numbers there are up to and including that
+            value.</p>
+        <div class="form-group form-inline">
+            <label for="number" class="h6">Enter Number:</label>
+            <input type="text" id="number" class="form-control" value="100">
+        </div>
+        <div class="form-group form-inline">
+            <label for="count" class="h6">Prime count:</label>
+            <input type="text" id="count" class="form-control" disabled>
+        </div>
+        <div class="form-group form-inline">
+            <label for="prime-numbers" class="h6">Prime numbers:</label>
+            <textarea id="prime-numbers" class="form-control" rows="5" disabled></textarea>
+        </div>
+        <div class="form-group form-inline">
+            <label></label>
+            <input type="button" id="calculate" class="btn btn-primary" value="Calculate">
+        </div>
+    </main>
+</body>
+
+</html>

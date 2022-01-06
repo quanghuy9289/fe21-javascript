@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exercise 02</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script>
+            var rowXcol = [];
+            var rows = prompt("Enter rows value: ");
+            var columns = prompt("Enter columns value: ");
+            if (!isNaN(rows) && !isNaN(columns) && rows % 1 === 0 && columns % 1 === 0) {
+                rows = parseInt(rows);
+                columns = parseInt(columns);
+                for (var i = 0; i < rows; i++) {
+                    rowXcol[i] = [];
+                    for (var j = 0; j < columns; j++) {
+                        var value = prompt("Enter value at row [" + i + "] column [" + j + "]");
+                        if (!isNaN(value) && parseInt(value) % 1 === 0) {
+                            rowXcol[i][j] = parseInt(value);
+                        } else {
+                            alert("Invalid number");
+                            j--;
+                        }
+                    }
+                }
+            } else alert("Invalid value")
+            var printAll = function() {
+                $("display").innerHTML = "";
+                for (var i = 0; i < rows; i++) {
+                    $("display").innerHTML += rowXcol[i].join("&nbsp;&nbsp;") + "\n\n";
+                }
+            }
+            var calSum = function() {
+                var total = 0;
+                for (var i = 0; i < rows; i++) {
+                    for (var j = 0; j < columns; j++) {
+                        total += rowXcol[i][j];
+                    }
+                }
+                $("display").innerHTML = "Total of array value is: " + total;
+            }
+            var findEle = function() {
+                var findValue = prompt("Enter a value you want to search in array");
+                findValue = parseInt(findValue);
+                var findX = true;
+                for (var i = 0; i < rows; i++) {
+                    for (var j = 0; j < columns; j++) {
+                        if (rowXcol[i][j] === findValue) {
+                            findX = true;
+                            break;
+                        } else {
+                            findX = false;
+                        }
+                    }
+                    if (findX === true) break;
+                }
+                $("display").innerHTML = (findX === true) ? "Value exists" : "Value not exists";
+            }
+            var sort = function() {
+                $("display").innerHTML = "";
+                localStorage.setItem("array", rowXcol);
+                var sortArr = function(x, y) {
+                    return x - y;
+                }
+                var arr = [];
+                var sortStr = localStorage.getItem("array").split(",").sort(sortArr);
+                var k = 0;
+                for (var i = 0; i < rows; i++) {
+                    arr[i] = [];
+                    for (var j = 0; j < columns; j++) {
+                        arr[i][j] = sortStr[k];
+                        k++;
+                    }
+                    $("display").innerHTML += arr[i].join("&nbsp;&nbsp") + "\n\n";
+                }
+            }
+        </script>
+        <style>
+            body {
+                margin-left: 20px;
+            }
+            span {
+                margin-left: 100px;
+            }
+            select {
+                width: 50px;
+                margin-left: 40px;
+            }
+            input {
+                margin-left: 50px
+            }
+            textarea {
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bold;
+                margin-top: 30px;
+                width: 400px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h4>[1].Print Array</h4>
+        <h4>[2].Calculate Sum Of Array</h4>
+        <h4>[3].Search A Number</h4>
+        <h4>[4].Sort Array</h4>
+        <span>Your choice is: </span>
+        <select id="choice">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+        <input type="button" id="choose" value="Choose"><br>
+        <textarea id="display"></textarea>
+        <script>
+            var $ = function(id) {
+                return document.getElementById(id);
+            }
+            var choice = function() {
+                var choiceValue = $("choice").value;
+                switch (choiceValue) {
+                    case "1": {
+                        printAll();
+                        break;
+                    }
+                    case "2": {
+                        calSum();
+                        break;
+                    }
+                    case "3": {
+                        findEle();
+                        break;
+                    }
+                    case "4": {
+                        sort();
+                        break;
+                    }
+                }
+            }
+            window.onload = function() {
+                $("choose").onclick = choice;
+            }
+        </script>
+    </body>
+</html>
