@@ -1,0 +1,22 @@
+body {
+    display: grid;
+    grid-template: 100px 1fr / repeat(12, 1fr);
+}
+main {
+    grid-row: 2 / 3;
+    grid-column: 3 / span 8;
+}
+label {
+    display: inline-block !important;
+    width: 200px;
+    text-align: right;
+    padding-right: 5px;
+}
+#random {
+    margin-left: 200px;
+}
+#today {
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 90%;
+}
