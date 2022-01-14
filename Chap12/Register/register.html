@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="register.css">
+    <script src="js/library_navigate.js"></script>
+    <script src="js/library_fields.js"></script>
+    <script src="js/library_validate.js"></script>
+    <script src="js/library_validate_form.js"></script>
+    <script src="js/register.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1 class="text-primary text-center mb-4">Register for an Account</h1>
+        <form id="registration_form" class="show">
+            <div class="form-group form-inline">
+                <label for="email" class="h6">Email:</label>
+                <input type="text" id="email" class="form-control">
+                <span id="email_error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <label for="password" class="h6">Password:</label>
+                <input type="password" id="password" class="form-control">
+                <span id="password_error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <label for="verify" class="h6">Verify Password:</label>
+                <input type="password" id="verify" class="form-control">
+                <span id="verify_error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <label for="first_name" class="h6">First Name:</label>
+                <input type="text" id="first_name" class="form-control">
+                <span id="first_name_error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <label for="last_name" class="h6">Last Name:</label>
+                <input type="text" id="last_name" class="form-control">
+                <span id="last_name_error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <label for="phone" class="h6">Phone Number:</label>
+                <input type="text" id="phone" class="form-control">
+                <span id="phone_error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <label for="zip" class="h6">ZIP Code:</label>
+                <input type="text" id="zip" class="form-control">
+                <span id="zip_error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <label for="card" class="h6">Card Type:</label>
+                <select id="card" class="form-control">
+                    <option>Visa</option>
+                    <option>MasterCard</option>
+                    <option>Discover</option>
+                </select>
+            </div>
+            <div class="form-group form-inline">
+                <label for="card_number" class="h6">Card Number:</label>
+                <input type="text" id="card_number" class="form-control">
+                <span id="card_number_error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <label for="exp_date" class="h6">Expiration Date:</label>
+                <input type="text" id="exp_date" class="form-control">
+                <span id="exp_date_error">&nbsp;</span>
+            </div>
+            <div class="form-group form-inline">
+                <input type="button" id="register" class="btn btn-primary" value="Register">
+                <input type="button" id="reset" class="btn btn-secondary" value="Reset">
+            </div>
+        </form>
+        <section id="registration_result" class="hide">
+            <p class="text-dark text-center">Congratulations! Your account registration has been submitted.</p>
+            <p class="text-dark text-center">You'll receive an email shortly with more information. Welcome!</p>
+            <div class="text-center">
+                <input type="button" id="back" class="btn btn-primary" value="Back">
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
