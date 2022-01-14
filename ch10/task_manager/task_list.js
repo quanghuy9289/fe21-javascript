@@ -35,7 +35,7 @@ var deleteFromTaskList = function() {
 };
 
 var editTaskListItem = function() {
-    var newText = prompt("Please enter new text", tasks[this.title]);  // 'this' = clicked link
+    var newText = prompt("Please enter new task", tasks[this.title]);  // 'this' = clicked link
     if (newText) {
         /* code goes here */
         editTask(tasks,this.title,newText);
