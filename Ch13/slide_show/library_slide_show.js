@@ -61,5 +61,5 @@ var slideshow = {
                 slideshow.stopSlideShow();
                 slideshow.startSlideShow();
             }
-    }
+    },
 };
