@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var n = parseInt(prompt("Enter N:"));
+        var result = "";
+        for(var i = 1; i <= n; i++) {
+          for(var k = 1; k <= (n-i); k++) {
+            result += "&nbsp;&nbsp;";
+          }
+          for(var j = 1; j <= i; j++) {
+            result += "*";
+          }
+          result += "<br>";
+        }
+    
+        document.write("N = " + n + "<br>" + result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

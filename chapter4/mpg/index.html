@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Miles Per Gallon</title>
+    <link rel="stylesheet" href="./mpg.css">
+    <script>
+        "use strict"
+        var $ = function(id) {
+            return document.getElementById(id);
+        };
+        var calculateMpg = function(miles, gallons) {
+            var mpg = (miles / gallons);
+            mpg = mpg.toFixed(1);
+            return mpg;
+        };
+        var processEntries = function() {
+            var miles = parseFloat($("miles").value);
+            var gallons = parseFloat($("gallons").value);
+            if (isNaN(miles)){
+                $("miles_error").firstChild.nodeValue = "Miles must be numeric";
+            }else if (miles <=0) {
+                $("miles_error").firstChild.nodeValue = "Miles must be greater than zero";
+            }else if (isNaN(gallons)) {
+            $("gallons_error").firstChild.nodeValue = "Gallons must be numeric";
+            }else if (gallons <= 0) {
+            $("gallons_error").firstChild.nodeValue = "Gallons must be greater than zero";
+            }else {
+            $("miles_error").firstChild.nodeValue = "";
+            $("gallons_error").firstChild.nodeValue = "";
+            $("mpg").value = calculateMpg(miles, gallons);
+            }
+            // if (isNaN(miles) || isNaN(gallons)) {
+            //     alert("Both entries must be numeric");
+            // }else {
+            //     $("mpg").value = calculateMpg(miles, gallons);
+            // }
+        };
+        var clearEtries = function() {
+          $("miles").value = "";
+          $("gallons").value = "";
+          $("mpg").value = "";
+          $("miles_error").firstChild.nodeValue = "*";
+          $("gallons_error").firstChild.nodeValue = "*";
+        }
+        window.onload = function() {
+            $("calculate").onclick = processEntries;
+            $("miles").focus();
+            $("clear_entries").onclick = clearEtries;
+            $("miles").ondblclick = clearEtries;
+        };
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Calculate Miles Per Gallon</h1>
+        <label for="miles">Miles Driven:</label>
+		<input type="text" id="miles">
+        <span id="miles_error">*</span><br>
+        <label for="gallons">Gallons of Gas Used:</label>
+        <input type="text" id="gallons">
+        <span id="gallons_error">*</span><br>
+        <label for="mpgx">Miles Per Gallon</label>
+        <input type="text" id="mpg" disabled><br>
+        <label>&nbsp;</label>
+        <input type="button" id="calculate" value="Calculate MPG"><br>
+        <label>&nbsp;</label>
+        <input type="button" id="clear_entries" value="Clear Entries"><br>
+    </main>
+</body>
+</html>

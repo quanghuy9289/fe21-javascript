@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var studentCode = [];
+        var studentName = [];
+        var studentAge = [];
+        var studentSex = [];
+        var moreEntries = true; 
+        var i = 0;
+    
+        do {
+          studentCode[i] = prompt("Enter student's Code:");
+          studentName[i] = prompt("Enter student's Name:");
+          studentAge[i] = prompt("Enter sutdent's Age:");
+          studentSex[i] = prompt("Enter student's Gender:");
+          i++;
+    
+          moreEntries = window.confirm("Do you want to enter more student's informantion?");
+        } while (moreEntries == true) 
+    
+        if(moreEntries == false) {
+    
+          for(var j = 0; j < i ; j++) {
+            document.write(
+              "Student's Code: " + studentCode[j] + " " + 
+              "Student's Name: " + studentName[j] + " " +
+              "Student's Age: " + studentAge[j] + " " +
+              "Student's Gender: " + studentSex[j] + " " + "<br><br>")
+          }
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

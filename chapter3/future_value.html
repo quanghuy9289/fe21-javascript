@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future_Value</title>
+    <script>
+        var again = "y";
+
+        do {
+            var futureValue;
+            do {
+                var investment = parseFloat(prompt("Enter investment amount as xxxxx.xx", 10000));
+                if (isNaN(investment)){
+                    alert("Investment must be a number");
+                }
+            }while (isNaN(investment));
+            
+            do {
+                var rate = parseFloat(prompt("Enter interest rate as xx.x, 7.5"));
+                if (isNaN(rate) || rate < 0 || rate >15){
+                    alert("Rate must be a number and \nGreater than 0 and less than 15");
+                }
+            }while (isNaN(rate) || rate < 0 || rate >15);
+            
+            var years = parseInt(prompt("Enter number of years", 10));
+            document.writeln("Investment amount = " + investment);
+            document.writeln(" Interest rate = " + rate);
+            document.writeln(" Years = " + years + "<br><br>");
+            futureValus = investment;
+            for (var i = 1; i <= years; i++) {
+                var interest = (futureValue * rate) / 100;
+                futureValue = futureValue + interest;
+                futureValue = parseInt(futureValue);
+
+                document.writeln("Year = " + i);
+                document.writeln("Interest = " + interest);
+                document.writeln("Value = " + futureValue + "<br><br>");
+            }
+            again = prompt("Repeat the entries", "y");
+        }while (again =="y");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

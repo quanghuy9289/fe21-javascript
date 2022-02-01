@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var currentYear = new Date().getFullYear();
+        var day;
+        var month = parseInt(prompt("Enter month:"));
+        if(isNaN(month) || month > 12 || month < 1) {
+          alert("Please enter a valid month")
+        }
+    
+        switch(month) {
+          case 1:
+          case 3:
+          case 5:
+          case 7:
+          case 8:
+          case 10:
+          case 12:
+            day = 31;
+            break;
+    
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            day = 30;
+            break;
+    
+          case 2:
+            if(currentYear % 4 == 0) {
+              day = 29;
+            } else {
+              day = 28;
+            }
+            break;
+        }
+        
+    </script>
+</head>
+<body>
+    <script>
+        document.write("Number of days in month " + month +  "of" + currentYear +  " is " + day);
+    </script>
+</body>
+</html>

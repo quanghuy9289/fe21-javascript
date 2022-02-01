@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var n = parseInt(prompt("Enter N: "));
+        var result = "";
+        if(isNaN(n) || n < 0) {
+          alert("Please enter a valid number(n > 0)");
+        }
+    
+        for(var i = 1; i <= n; i++) {
+          for(j = 1; j <= i; j++) {
+            result += "*";
+          }
+          result += "<br>";
+        }
+    
+    </script>
+</head>
+<body>
+    <script>
+        document.write("N = " + n + "<br>" + result);
+    </script>
+</body>
+</html>

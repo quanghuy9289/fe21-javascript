@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        while (isNaN(math) || isNaN(physics) || isNaN(chemistry) || math > 10 || math < 0 || physics >10 || physics <0 || chemistry >10 || chemistry <0) {
+        var math = parseFloat(prompt("Math score: "));
+    
+        var physics = parseFloat(prompt("Physics score: "));
+      
+        var chemistry = parseFloat(prompt("Chemistry score: "));
+        }
+        var average =  (math + physics + chemistry) / 3;
+        average = average.toFixed(2);
+
+        var rank = "";
+
+        if(average >= 8) {
+        rank = "A";
+        } else if (average >= 6.5 && average < 8.5) {
+        rank = "B";
+        } else if (average >= 5.0 && average < 6.5) {
+        rank = "C";
+        } else if (average < 5) {
+        rank = "D";
+        }
+    </script>
+</head>
+<body>
+    <script>
+        document.write(
+          "Math score: " + math + "<br>" +
+          "Physics score: " + physics + "<br>" +
+          "Chemistry score: " + chemistry + "<br><br>" +
+          "Average score: " + average + "<br><br>" +
+          "Rank: " + rank
+        )
+      </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a = parseFloat(prompt("Enter a: "));
+        var b = parseFloat(prompt("Enter b: "));
+        var x;
+    
+        if (isNaN(a) || isNaN(b)) {
+          alert("Please enter a valid number")
+        }
+        else if(a == 0 && b == 0) {
+          document.write("ax + b = 0" + "<br>" + "a = " + a, " b = " + b + "<br>" + "The equation has infinitely solution")
+        } 
+        else if (a == 0) {
+          document.write("ax + b = 0" + "<br>" + "a = " + a, " b = " + b + "<br>" + "The equation has no solutions")
+        } 
+        else {
+          x = -b/a;
+          x = x.toFixed(2);
+          document.write("ax + b = 0" + "<br>" + "a = " + a, " b = " + b + "<br>" + "x = " + x);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
