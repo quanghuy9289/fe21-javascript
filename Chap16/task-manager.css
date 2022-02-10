@@ -1,0 +1,45 @@
+body {
+  display: grid;
+  grid-template: 100px 1fr 100px / repeat(12, 1fr);
+}
+main {
+  grid-row: 2 / 3;
+  grid-column: 3 / span 8;
+  border: 3px solid black;
+  border-radius: 20px;
+  padding: 30px 20px;
+}
+label {
+  color: black;
+  font-weight: bold;
+}
+#tasks {
+  min-height: 200px;
+  height: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: #212529;
+  padding: 10px 0px 0px 10px;
+  margin-top: 32px;
+}
+p {
+  margin-bottom: 10px;
+}
+a {
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-right: 10px;
+  padding: 2px 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: normal;
+}
+a:hover {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  text-decoration: none;
+  color: #ffffff;
+}
+i {
+  margin-right: 5px;
+}
