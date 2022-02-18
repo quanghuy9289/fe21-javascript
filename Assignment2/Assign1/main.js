@@ -14,6 +14,7 @@ function inputArray() {
 }
 
 function outputArray() {
+    intNumbers.filter((x) => Boolean(x));
     var strU;
     for (var i = 0; i < intNumbers.length; i++) {
         if (intNumbers[i] !== undefined) {
@@ -63,7 +64,7 @@ function sortArrayDESC() {
 }
 
 inputArray(inputArray);
-var chooseFunction = parseInt(prompt("select 1 function to perform: 1- print the array, 2- print the largest number in the array, 3- sum the elements in the array, 4- sort the array in descending, 5- find a number in array."));
+var chooseFunction = parseInt(prompt("Select 1 function to perform: 1- print the array, 2- print the largest number in the array, 3- sum the elements in the array, 4- sort the array in descending, 5- find a number in array."));
 if (isNaN(chooseFunction)) {
     alert("Please enter a number!!");
 } else if (chooseFunction == "") {
