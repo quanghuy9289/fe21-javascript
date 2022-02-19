@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/mpg.js"></script>
+    <title>Document</title>
+    <style>
+        label {
+            width: 10em;
+            text-align: right;
+            float: left;
+        }
+        h1 {
+            padding-bottom: 20px;
+            color: blue;
+            margin: 0;
+        }
+        body {
+            width: 600px;
+            border: 2px solid blue;
+            margin: auto;
+            padding: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            margin-left: 10px;
+            padding: 2px;
+            width: 12em;
+        }
+        input[type="button"] {
+            width: 12.7em;
+            margin-left: 10.6rem;
+            padding: 2px;
+        }
+        span {
+            margin-left: 5px;
+            color: red;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Caculate Miles Per Gallons</h1>
+    <label for="miles">Miles Driven:</label>
+    <input type="text" name="miles" id="miles"><span id="check1">*</span><br />
+    <label for="gallon">Gallons of Gas Used:</label>
+    <input type="text" name="gallon" id="gallon"><span id="check2">*</span><br />
+    <label for="total">Miles Per Gallons:</label>
+    <input type="text" name="total" id="total" disabled><br />
+    <input id="caculate" type="button" value="Caculate MPG"><br />
+    <input id="clear" type="button" value="Clear Entries">
+</body>
+</html>

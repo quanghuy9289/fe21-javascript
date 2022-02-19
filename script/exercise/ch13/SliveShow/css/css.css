@@ -1,0 +1,12 @@
+main {
+    margin-top: 50px
+}
+h1 {
+    margin-bottom: 30px;
+}
+#play_pause, #change_speed {
+    margin: 20px 5px;
+}
+p {
+    margin-top: 10px;
+}

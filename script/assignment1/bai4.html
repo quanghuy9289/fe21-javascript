@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = parseInt(prompt("Nhap a: "));
+        var b = parseInt(prompt("Nhap b: "));
+        var c = parseInt(prompt("Nhap c: "));
+
+        var delta = b*b - 4*a*c;
+        if(delta < 0) {
+            alert("vo nghiem");
+        }else if(delta == 0){ 
+            alert("PT co 1 nghiem x1 = x2 = "+ -b/(2*a));
+        }else {
+            alert("PT co 2 nghiem phan biet la: x1 =  "+(-b + delta) / (2*a) + "| x2 = "+(-b - delta) / (2*a));
+        }
+    </script>
+</body>
+</html>

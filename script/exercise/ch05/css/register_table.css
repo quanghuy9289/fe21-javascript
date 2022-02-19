@@ -1,0 +1,36 @@
+body {
+    width: 700px;
+    margin: auto;
+    border: 2px solid #0000ff;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+h1 {
+    margin: 0;
+    padding-bottom: 20px;
+    color: blue;
+}
+label {
+    width: 9em;
+    float: left;   
+}
+input {
+    width: 17.5em;
+    margin-bottom: 10px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    width: 2em;
+}
+input[type="button"] {
+    margin-left: 20px;
+}
+select {
+    width: 18em;
+    padding: 2px;
+}
+span {
+    margin-left: 5px;
+    color: red;
+}

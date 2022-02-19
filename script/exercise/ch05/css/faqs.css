@@ -1,0 +1,33 @@
+body {
+    width: 80%;
+    margin: auto;
+    border: 2px solid #000;
+    padding: 20px;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+div {
+    display: none;
+}
+div.open {
+    display: block;
+}
+h2 {
+    cursor: pointer;
+    background: url(../images/plus.png) no-repeat left center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+}
+h2.minus {
+    cursor: pointer;
+    background: url(../images/minus.png) no-repeat left center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+}
+h3 {
+    font-weight: normal;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 700px;
+            margin: 50px auto;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            margin: 5px 5px 5px 0;
+        }
+        /* input[type="radio"] {
+            margin: 5px;
+        } */
+        input[type="submit"] {
+            padding: 5px;
+            margin: 5px;
+            
+        }
+        a {
+            font-size: 30px;
+        }
+        label {
+            margin-left: 5px;
+        }
+    </style>
+    <script src="./js/bai7.js"></script>
+</head>
+<body>
+    <main>
+        <form action="">
+            <a href="#">Quản Lý Thông Tin Học Sinh</a>
+            <input id="codehs" type="text" placeholder="Mã Học Sinh"><span id="check1">*</span>
+            <input id="namehs" type="text" placeholder="Tên Học Sinh"><span id="check2">*</span>
+            <input id="agehs" type="text" placeholder="Tuổi Học Sinh"><span id="check3">*</span> <br />
+            <input id="sex1" type="radio" name="sex" value="Nam"><label for="">Nam</label>
+            <input id="sex2" type="radio" name="sex" value="Nữ"><label for="">Nữ</label><br /><br />
+            <input id="btn" type="button" value="Xác Nhận">
+            <input id="reset" type="button" value="Reset">
+    
+            <p>Thông Tin Học Sinh</p>
+            <table id="print"></table>
+        </form>
+    </main>
+</body>
+</html>

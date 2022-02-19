@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./future_value.js"></script>
+    <title>Document</title>
+    <style>
+        label {
+            width: 10em;
+            text-align: right;
+            float: left;
+        }
+        h1 {
+            padding-bottom: 20px;
+            color: blue;
+            margin: 0;
+        }
+        body {
+            width: 700px;
+            border: 2px solid blue;
+            margin: auto;
+            padding: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            margin-left: 10px;
+            padding: 2px;
+            width: 12em;
+        }
+        input[type="button"] {
+            width: 12.7em;
+            margin-left: 10.6rem;
+            padding: 2px;
+        }
+        span {
+            margin-left: 5px;
+            color: red;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h1>Future Value Caculator</h1>
+        <label for="investment">Total Investment:</label>
+        <input type="text" name="investment" id="investment" required><span id="check1"></span><br />
+        <label for="annual">Annual Interest Rate:</label>
+        <input type="text" name="annual" id="annual" required> %<span id="check2"></span><br />
+        <label for="year">Number Of Year:</label>
+        <input type="text" name="year" id="year" required><span id="check3"></span><br />
+        <label for="futureValue">Future Value:</label>
+        <input type="text" name="futureValue" id="futureValue" disabled><br />
+        <input id="caculate" type="button" value="Caculate"><br />
+        <input id="clear" type="button" value="Clear Entries">
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Toan = parseInt(prompt('Nhap diem Toan: '));
+        var Ly = parseInt(prompt('Nhap diem Ly: '));
+        var Hoa = parseInt(prompt('Nhap diem Hoa: '));
+        var DTB = (Toan + Ly + Hoa) / 3;
+
+        if(DTB >= 8) {
+            document.write("DTB = " + DTB + "\n", "Xep loai: A");
+        }else if(DTB >= 6.5 && DTB < 8) {
+            document.write("DTB = " + DTB + "\n", "Xep loai: B");
+        }else if(DTB >= 5 && DTB < 6.5) {
+            document.write("DTB = " + DTB + "\n", "Xep loai: C");
+        }else {
+            document.write("DTB = " + DTB + "\n", "Xep loai: D");
+        }
+        
+    </script>
+</body>
+</html>
