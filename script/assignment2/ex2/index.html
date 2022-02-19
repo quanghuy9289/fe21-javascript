@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 100%;
+            background-color: white;
+            width: 600px;
+            margin: 0 auto;
+            border: 3px solid #00007c;
+            box-shadow: 4px 4px 4px #00007c;
+            padding: 0 2rem 1rem;
+        }
+        
+        h1 {
+            color: blue;
+            font-size: 150%;
+            margin-bottom: 0.5rem;
+        }
+        
+        #tasks {
+            width: 50%;
+            float: right;
+        }
+        
+        #arr_list {
+            width: 100%;
+            resize: none;
+        }
+        
+        #task_form {
+            width: 50%;
+            padding-right: 2rem;
+            box-sizing: border-box;
+        }
+        
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            font-size: 90%;
+            padding: 0.2rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+    </style>
+    <script>
+        var $ = function(id) {
+            return document.getElementById(id);
+        };
+
+        var arr = [];
+
+        // get n, m
+        var processEntries = function () {
+            var rows = $('n').value;
+            rows = parseInt(rows);
+            var cols = $('m').value;
+            cols = parseInt(cols);
+
+            arr = new Array(rows)
+            for (var i = 0; i < rows; i++) {
+                arr[i] = new Array(cols)
+                for (var j = 0; j < cols; j++) {
+                    arr[i][j] = null;
+                }
+            }
+            addValue_arr(arr);
+            displayScreen_arr(arr);
+            sumElements_arr(arr);
+        }
+
+
+
+        var addValue_arr = function () {
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = 0; j < arr[i].length; j++) {
+                    arr[i][j] = prompt('Giá trị của phần tử arr' + '[' + i + ']' + '[' + j + ']' );
+                }
+            }
+            // console.log(arr)
+        }
+
+        var displayScreen_arr = function () {     
+            for (i = 0; i < arr.length; i++) {
+                $('arr_list').value += arr[i] + '\n';
+            }
+        }
+
+        var sumElements_arr = function () {
+            var sum = 0;
+            for (i = 0; i < arr.length; i++) {
+                for (j = 0; j < arr[i].length; j++) {
+                    arr[i][j] = parseInt(arr[i][j]);
+                    sum += arr[i][j];
+                }
+            }
+            $('arr_list').value += "\n\nsum = " + sum;
+        }
+
+        var findElement_arr = function () {
+            var x = prompt('Nhập số cần tìm')
+            x = parseInt(x)
+
+            var find = arr.find(function (currentValue, index) {
+                return currentValue.includes(x)
+            })
+
+            if (find) {
+                alert('Có')
+            } else {
+                alert('Không')
+            }
+        }
+
+        var formatSortNumber_arr = function () {
+            arr.forEach(function (currentValue, index) {
+                currentValue.sort(function (a, b) {
+                    return a - b
+                });
+            });
+            $('arr_list').value = "";
+            displayScreen_arr();
+            sumElements_arr();
+        }
+
+        var formatSortString_arr = function () {
+            arr.forEach(function (currentValue, index) {
+                return currentValue.sort();
+            });
+        }
+
+        var clear_arr = function () {
+            arr.length = 0;  
+            $('arr_list').value = "";
+            $('n').focus();
+        }
+
+        window.onload = function () {
+            $('calculate').onclick = processEntries;
+            $('clear').onclick = clear_arr;
+            $('find').onclick = findElement_arr;
+            $('sort').onclick = formatSortNumber_arr;
+            $('n').focus();
+        }
+    </script>
+    <main>
+        <h1>Chương trình EX2</h1>
+        <p>Nhập vào 2 số với n = rows, m = column</p>
+        <div id="tasks">
+            <label for="arr_list">Task List</label>
+            <textarea name="" id="arr_list" cols="30" rows="10"></textarea>
+        </div>
+        <form id="task_form">
+            <label for="n">n = </label>
+            <input type="text" id="n"> <br>
+            <label for="m">m = </label>
+            <input type="text" id="m"><br>
+
+            <input type="button" id="calculate" value="Enter"> <br>
+            <input type="button" id='clear' value="Clear"> <br>
+            <input type="button" id='find' value="Find"> <br>
+            <input type="button" id="sort" value="Sort"> <br>
+        </form>
+    </main>
+</head>
+<body>
+    
+</body>
+</html>

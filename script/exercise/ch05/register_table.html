@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/register_table.css">
+    <script src="./js/register_table.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form action="register_account.html" method="get" name="registration_form" id="registration_form">
+        <h1>Register for an Account</h1>
+        <label for="">Email:</label>
+        <input type="text" name="email_address" id="email_address"><span id="error_email"></span><br />
+        <label for="">Mobile Phone:</label>
+        <input type="text" name="phone_address" id="phone_address"><span id="error_phone"></span><br />
+        <label for="">Country:</label>
+        <select name="country" id="country"><br />
+            <option value="country">Select an option</option>
+            <option>California</option>
+            <option>New Mexico</option>
+            <option>Florida</option>
+            <option>Pennsylvania</option>
+        </select>
+        <span id="error_country"></span>
+        <br /><br />
+        <label for="">Contact me by:</label>
+        <input type="radio" name="radio" id="text" checked>Text
+        <input type="radio" name="radio" id="email">Email
+        <input type="radio" name="radio" id="mobile_phone">Mobile Phone
+        <input type="radio" name="radio" id="contact">Don't Contact me
+        <br />
+        <label for="">Team of Service</label>
+        <input type="checkbox" id="service">I accept
+        <span id="error_sevice"></span>
+        <br />
+        <label for="">Comment:</label>
+        <textarea name="comment" id="comment" cols="30" rows="5" placeholder="These are the times that try men's souls."></textarea><br /><br />
+        <input type="button" value="Register" id="register">;
+        <input type="button" value="Reset" id="reset">
+    </form>
+</body>
+</html>
