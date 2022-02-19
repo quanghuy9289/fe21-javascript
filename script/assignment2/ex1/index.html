@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+    <script>
+        //1. Tạo mảng gồm 10 phần tử
+        var nameArray = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        //2. In ra màn hình
+        var printArray = function (x) {       
+            return document.write(x);
+        }
+
+        //3. Tìm giá trị có trong mảng
+        var findArray_value = function (x) {                    
+            var search = prompt('Nhập giá trị cần tìm: ')
+            search = parseInt(search);
+            if (x.indexOf(search) != -1) {
+                document.write('Giá trị hiện đang tồn tại ở phần tử mảng số: ' + x.indexOf(search))
+            } else {
+                document.write('Giá trị không tồn tại trong mảng')
+            }
+        }
+        
+        //4. Tìm phần tử có giá trị lớn nhất
+        var findArray_maxNumber = function (x) {
+            var max = Math.max.apply(Math, x);
+           
+            return document.write(max);
+        }
+
+        //5. Tính tổng tất cả các phần tử trong mảng
+        function sumArray_number(x) {
+            let sum = 0;
+            x.map(function(value){
+                sum += value;
+            });
+            
+            return document.write(sum);
+        }
+
+        //6. Sắp xép giảm dần
+        function sortArray_numberDescending(x) {                    
+            var tg = 0;
+            for (i= 0; i < x.length - 1; i++) {
+
+                for (k = i + 1; k < x.length ; k++ ) {
+                    if (x[i] < x[k]) {
+                        tg = x[i];
+                        x[i] = x[k];
+                        x[k] = tg;  
+                    } 
+                }
+            }
+            return document.write(x);
+        };
+        
+        //7. Sắp xếp tăng dần
+        function sortArray_numberAscending(x) {         
+            var tg = 0;
+            for (i= 0; i < x.length - 1; i++) {
+
+                for (k = i + 1; k < x.length ; k++ ) {
+                    if (x[i] > x[k]) {
+                        tg = x[i];
+                        x[i] = x[k];
+                        x[k] = tg;  
+                    } 
+                }
+            }
+            return document.write(x);
+        };
+
+        function option(x) {
+            var select = prompt('Nhập các tùy chọn sau đây: \n 1 = In mảng \n 2 = Tìm kiếm \n 3 = Tìm giá trị lớn nhất');
+            select = parseInt(select);
+            if (select <= 3 && select >= 1) {
+                if (select == 1) {
+                    printArray(x);
+                } 
+                if (select == 2) { 
+                    findArray_value(x)
+                }
+                if (select == 3) {
+                    findArray_maxNumber(x)
+                }
+            } else {
+                alert('Vui lòng nhập từ 1-3')
+            }
+        }
+
+        console.log(option(nameArray));
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
