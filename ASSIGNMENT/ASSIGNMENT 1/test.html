@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Exercise 07</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      var studentCode = [];
+      var studentName = [];
+      var studentAge = [];
+      var studentSex = [];
+      studentCode[0] = "06";
+      studentName[0] = "Le Nguyen Bao An";
+      studentAge[0] = "26";
+      studentSex[0] = "male";
+      var studentConfirm = true;
+      var i = 0;
+      do {
+        studentConfirm = window.confirm(
+          "Do you want to enter more student's information?"
+        );
+        if (studentConfirm === true) {
+          i++;
+          studentCode[i] = prompt("Enter the code of student " + i);
+          studentName[i] = prompt("Enter the name of student " + i);
+          studentAge[i] = prompt("Enter the age of student " + i);
+          studentSex[i] = prompt("Enter the gender of student " + i);
+        }
+      } while (studentConfirm === true);
+      if (studentConfirm === false) {
+        for (var j = 0; j <= i; j++) {
+          document.write(
+            "Code: " +
+              studentCode[j] +
+              " Name: " +
+              studentName[j] +
+              " Age: " +
+              studentAge[j] +
+              " Gender: " +
+              studentSex[j] +
+              "<br>"
+          );
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
